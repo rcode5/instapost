@@ -5,20 +5,19 @@ ruby '2.1.4'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.2.0.beta4'
+gem 'rails', '~> 4.1.6'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails', '~> 5.0.0.beta1'                     # Rails 4.2 support
+gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
-gem 'simple_form', '~> 3.1.0.rc2'                      # Bootstrap 3 support
 gem 'uglifier'
-
 gem 'awesome_print'
 
 gem 'casein', github: 'rcode5/casein'  #until casein ups authlogic requirement
+gem 'paperclip'
 
 gem 'authlogic', '~> 3.4.3'
 group :production, :acceptance do

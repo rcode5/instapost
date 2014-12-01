@@ -1,23 +1,24 @@
-# PostgreSQL. Versions 8.2 and up are supported.
-# Use 'createuser -s postgres' to create a general purpose db (super)user.
-
-development: &default
+default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
   database: instapost_development
   username: postgres
-  pool: 5
-  timeout: 5000
+  #password:
+  #host: localhost
+  #port: 5432
+  #schema_search_path: myapp,sharedapp,public
+  #min_messages: notice
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: instapost_test
-  min_messages: warning
 
-acceptance:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-
-production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
