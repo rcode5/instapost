@@ -18,6 +18,9 @@ gem 'uglifier'
 
 gem 'awesome_print'
 
+gem 'casein', github: 'rcode5/casein'  #until casein ups authlogic requirement
+
+gem 'authlogic', '~> 3.4.3'
 group :production, :acceptance do
   gem 'rails_stdout_logging'
   gem 'heroku_rails_deflate'
@@ -42,6 +45,8 @@ group :test, :development do
 end
 
 group :development do
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'foreman'
