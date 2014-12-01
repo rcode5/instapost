@@ -4,6 +4,9 @@
 <div class="row">
 	<div class="col-lg-6">
 		<%= casein_file_field f, f.object, :image %>
+    <%- if f.object.image? %>
+    <p class="help">Current File: <%= f.object.image.url %></p>
+    <%- end %>
 	</div>
 	<div class="col-lg-6">
 		<%= casein_text_area f, f.object, :note %>

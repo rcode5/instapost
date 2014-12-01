@@ -5,7 +5,7 @@ module Casein
   
     ## optional filters for defining usage according to Casein::AdminUser access_levels
     # before_filter :needs_admin, :except => [:action1, :action2]
-    # before_filter :needs_admin_or_current_user, :only => [:action1, :action2]
+    before_filter :needs_admin_or_current_user, :only => [:index, :show, :new, :edit, :update, :create, :destroy]
   
     def index
       @casein_page_title = 'Posts'
@@ -20,6 +20,11 @@ module Casein
     def new
       @casein_page_title = 'Add a new post'
     	@post = Post.new
+    end
+
+    def edit
+      @casein_page_title = 'Edit the post'
+    	@post = Post.find params[:id]
     end
 
     def create
