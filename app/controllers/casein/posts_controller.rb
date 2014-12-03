@@ -2,10 +2,10 @@
 
 module Casein
   class PostsController < Casein::CaseinController
-  
+    
     ## optional filters for defining usage according to Casein::AdminUser access_levels
     # before_filter :needs_admin, :except => [:action1, :action2]
-    before_filter :needs_admin_or_current_user, :only => [:index, :show, :new, :edit, :update, :create, :destroy]
+    # before_filter :needs_admin_or_current_user, :only => [:index, :show, :new, :edit, :update, :create, :destroy]
   
     def index
       @casein_page_title = 'Posts'
