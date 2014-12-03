@@ -12,7 +12,11 @@
 	
 	<% posts.each do |post| %>
 		<tr>
-			<td><%= casein_table_cell_link post.image.url, casein_post_path(post) %></td>
+			<td>
+        <%= link_to casein_post_path(post) do %>
+        <%= image_tag casein_table_cell_link post.image.url(:thumb) %>
+        <%= end %>
+      </td>
 			<td><%= casein_table_cell_link post.note, casein_post_path(post) %></td>
 			<td class="edit">
 				<%= link_to(casein_show_row_icon("edit"), edit_casein_post_path(post))%>

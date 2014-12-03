@@ -5,14 +5,15 @@ GIT
     jasminerice (0.1.0)
       coffee-rails
 
-GIT
-  remote: git://github.com/rcode5/casein.git
-  revision: ee52cfc17955163d3e2b91d1fa0cb73a44c67480
+PATH
+  remote: /projects/casein
   specs:
     casein (5.0.1.0)
-      authlogic (= 3.4.3)
+      authlogic (= 3.4.2)
+      bootstrap-sass (~> 3.3.1)
       casein
       jquery-rails
+      sass-rails (>= 3.2)
       scrypt (= 1.2.1)
       will_paginate (= 3.0.7)
 
@@ -47,11 +48,10 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
-    authlogic (3.4.3)
+    authlogic (3.4.2)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
       request_store (~> 1.0)
-      scrypt (~> 1.2)
     awesome_print (1.2.0)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -210,7 +210,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.4.0)
+    rake (10.4.1)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -295,7 +295,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  authlogic (~> 3.4.3)
   awesome_print
   better_errors
   binding_of_caller
