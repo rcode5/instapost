@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Clear Sans';
+  src: font-url('EOT/ClearSans-Regular.eot'); /* IE 5-8 */ 
+  src: local('☺'),             /* sneakily trick IE */
+       font-url('WOFF/ClearSans-Regular.woff') format('woff'),    /* FF 3.6, Chrome 5, IE9 */
+       font-url('TTF/ClearSans-Regular.ttf') format('truetype'), /* Opera, Safari */
+       font-url('SVG/ClearSans-Regular.svg') format('svg'); /* iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clear Sans';
+  src: font-url('EOT/ClearSans-Italic.eot'); /* IE 5-8 */ 
+  src: local('☺'),             /* sneakily trick IE */
+        font-url('WOFF/ClearSans-Italic.woff') format('woff'),    /* FF 3.6, Chrome 5, IE9 */
+        font-url('TTF/ClearSans-Italic.ttf') format('truetype'), /* Opera, Safari */
+        font-url('SVG/ClearSans-Italic.svg') format('svg'); /* iOS */
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Clear Sans';
+  src: font-url('EOT/ClearSans-Thin.eot'); /* IE 5-8 */ 
+  src: local('☺'),             /* sneakily trick IE */
+        font-url('WOFF/ClearSans-Thin.woff') format('woff'),    /* FF 3.6, Chrome 5, IE9 */
+        font-url('TTF/ClearSans-Thin.ttf') format('truetype'), /* Opera, Safari */
+        font-url('SVG/ClearSans-Thin.svg') format('svg'); /* iOS */
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clear Sans';
+  src: font-url('EOT/ClearSans-Bold.eot'); /* IE 5-8 */ 
+  src: local('☺'),             /* sneakily trick IE */
+        font-url('WOFF/ClearSans-Bold.woff') format('woff'),    /* FF 3.6, Chrome 5, IE9 */
+        font-url('TTF/ClearSans-Bold.ttf') format('truetype'), /* Opera, Safari */
+        font-url('SVG/ClearSans-Bold.svg') format('svg'); /* iOS */
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clear Sans';
+  src: font-url('EOT/ClearSans-BoldItalic.eot'); /* IE 5-8 */ 
+  src: local('☺'),             /* sneakily trick IE */
+        font-url('WOFF/ClearSans-BoldItalic.woff') format('woff'),    /* FF 3.6, Chrome 5, IE9 */
+        font-url('TTF/ClearSans-BoldItalic.ttf') format('truetype'), /* Opera, Safari */
+        font-url('SVG/ClearSans-BoldItalic.svg') format('svg'); /* iOS */
+  font-weight: 700;
+  font-style: italic;
+}

@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+@import 'clear-sans-font';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'mixins';
+
+
+html, body {
+  font-family: 'Clear Sans', sans-serif;
+}
