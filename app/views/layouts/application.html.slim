@@ -1,0 +1,32 @@
+doctype html
+/[if lt IE 7]
+  html.no-js.ie6.oldie lang="en"
+/[if IE 7]
+  html.no-js.ie7.oldie lang="en"
+/[if IE 8]
+  html.no-js.ie8.oldie lang="en"
+/[if gte IE 8]
+  html.no-js lang="en"
+head
+  title Instapost
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+  meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+body class="#{[controller.controller_name, controller.action_name].join(' ')}"
+  .container
+    .navbar-header
+      = link_to "Instapost", root_path 
+      ul.nav.navbar-nav
+        li = @current_user
+  .container-fluid
+    = yield
+        
+  .container
+    footer.footer
+      .copyright.pull-right Copyright &copy; 2014
+      .rcode.pull-left 
+        | Made by 
+        '
+        = link_to "rcode5", "http://www.rcode5.com"
