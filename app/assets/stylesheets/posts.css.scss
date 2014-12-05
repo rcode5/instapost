@@ -14,19 +14,21 @@ table {
     font-weight: 100;
   }
   .post {
-    border:1px solid #ccc;
+    border-radius: 2px;
+    border:1px solid #eee;
     max-width: 90%;
     margin: auto auto 5% auto;
-    padding: 5%;
+    padding: 4% 5% 4%;
     background-color: $light-background-color;
     .date {
       font-style: italic;
       position:relative;
-      top: -3rem;
+      top: -2rem;
     }
   }
   .note {
     margin-top: 20px;
+    font-size: 2rem;
   }
 }
 
