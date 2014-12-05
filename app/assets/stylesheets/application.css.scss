@@ -18,6 +18,10 @@
 @import 'bootstrap';
 @import 'mixins';
 
+* {
+    margin: 0;
+}
+
 html, body {
   font-family: 'Clear Sans', sans-serif;
 }
