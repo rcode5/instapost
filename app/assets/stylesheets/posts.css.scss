@@ -1,0 +1,53 @@
+@import 'bootstrap/variables';
+@import 'variables';
+table {
+  .image.thumb {
+    img {
+      max-height: 50px;
+    }
+  }
+}
+
+.posts {
+  padding-top: 80px; /* header height + 40 */
+  h1,h2,h3,h4,h5,h5 {
+    font-weight: 100;
+  }
+  .post {
+    border:1px solid #ccc;
+    max-width: 90%;
+    margin: auto auto 5% auto;
+    padding: 5%;
+    background-color: $light-background-color;
+    .date {
+      font-style: italic;
+      position:relative;
+      top: -3rem;
+    }
+  }
+  .note {
+    margin-top: 20px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-sm-min) { 
+  .posts .post {
+    max-width: 70%;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { 
+  .posts .post {
+    max-width: 50%;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  .post {
+    max-width: 40%;
+  }
+}
+

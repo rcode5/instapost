@@ -1,0 +1,7 @@
+.col-xs-12
+  .post
+    .date = post.created_at.strftime("%B %d, %Y")
+    .img
+      img src=post.image.url(:main) class="img-responsive"
+    .note
+      = post.note

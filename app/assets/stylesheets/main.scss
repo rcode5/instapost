@@ -1,0 +1,41 @@
+@import 'variables';
+
+html, body {
+  font-family: 'Clear Sans', sans-serif;
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -1 * $header-height; /* the bottom margin is the negative value of the footer's height */
+}
+
+footer, .push {
+  height: $header-height; /* .push must be the same height as .footer */
+}
+body.posts {
+  .navbar-header, footer {
+    height: $header-height;
+    line-height:  $header-height;
+    font-size: small;
+    border-top: 1px solid #eeeeee;
+    background-color: $light-background-color;
+  }
+  
+  
+  .navbar-header {
+    font-size:  $header-height * 0.5;
+    border-bottom: 1px solid darken($light-background-color, 0.5);
+    text-transform: uppercase;
+    letter-spacing: -1;
+    font-weight: 100;
+  }
+  
+  .push {
+    height: $header-height;
+  }
+  footer {
+    padding: 0 5%;
+  }
+}
