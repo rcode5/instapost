@@ -5,8 +5,9 @@ GIT
     jasminerice (0.1.0)
       coffee-rails
 
-PATH
-  remote: /projects/casein
+GIT
+  remote: git://github.com/rcode5/casein.git
+  revision: 4684c9ae85c000409638fc39fd5868aaad62f7e9
   specs:
     casein (5.0.1.0)
       authlogic (= 3.4.3)
