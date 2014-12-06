@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
 @import 'clear-sans-font';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -24,4 +25,5 @@
 
 html, body {
   font-family: 'Clear Sans', sans-serif;
+  font-size: 17px;
 }

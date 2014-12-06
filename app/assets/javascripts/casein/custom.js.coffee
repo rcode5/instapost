@@ -16,7 +16,7 @@ $ ->
 
     setSelectFont = () ->
       $fontSelector = $('form #customization_font');
-      currentFont = $fontSelector.val() || 'inherit';
+      currentFont = availableFonts[$fontSelector.val()] || 'inherit';
       $fontSelector.css('font-family', currentFont)
       $sampler.css('font-family', currentFont)
 

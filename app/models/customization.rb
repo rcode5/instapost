@@ -9,10 +9,19 @@ class Customization < ActiveRecord::Base
     orange: 'rgba(255, 230, 200, 0.3)'
   }
   
-  FONTS = [:raleway, :courier, :helvetica]
+  FONTS = {
+    clear_sans: '"Clear Sans", Helvetica, sans-serif',
+    courier: '\"Courier\", monospace',
+    helvetica: 'Helvetica, Verdana, Arial, sans-serif',
+    architects_daughter: '"Architects Daughter", fantasy'
+  }
 
   def self.current
     order(created_at: :desc).first
+  end
+
+  def font_value
+    FONTS[font.to_sym]
   end
 
   def color_value
@@ -24,6 +33,6 @@ class Customization < ActiveRecord::Base
   end
 
   def self.font_select_options
-    FONTS.map{|k| [k.to_s.humanize,k] }
+    FONTS.keys.map{|k| [k.to_s.humanize,k] }
   end
 end

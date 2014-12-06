@@ -1,7 +1,7 @@
-body { font-family: <%= @custom.font.humanize %>; }
+body { font-family: <%= @custom.font_value.html_safe %>; }
 
 body.posts .navbar-header, body.posts footer,
-.posts .post { background-color: <%= @custom.color_value %>; }
+.posts .post { background-color: <%= @custom.color_value.html_safe %>; }
 body.posts .navbar-header {
   border-bottom: 1px solid #eee;
 }
