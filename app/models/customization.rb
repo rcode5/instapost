@@ -6,7 +6,7 @@ class Customization < ActiveRecord::Base
     green: 'rgba(200,255,200, 0.3)',
     blue: 'rgba(200,200,255, 0.3)',
     yellow: 'rgba(255,255,200, 0.3)',
-    orange: 'rgba(255, 230, 200, 0.3)'
+    orange: 'rgba(255, 200, 150, 0.3)'
   }
   
   FONTS = {

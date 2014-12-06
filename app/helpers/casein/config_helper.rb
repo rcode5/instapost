@@ -1,9 +1,10 @@
+# coding: utf-8
 module Casein
   module ConfigHelper
     
     # Name of website or client — used throughout Casein.
     def casein_config_website_name
-      'Casein'
+      'Instapost'
     end
 
     # Filename of logo image. Ideally, it should be a transparent PNG around 140x30px
