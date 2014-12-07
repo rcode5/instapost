@@ -3,6 +3,7 @@
 html, body {
   font-family: 'Clear Sans', sans-serif;
   height: 100%;
+  color: $text-color;
 }
 .wrapper {
   min-height: 100%;
@@ -30,6 +31,23 @@ body.posts {
     text-transform: uppercase;
     letter-spacing: -1;
     font-weight: 100;
+    a {
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+        color: $text-accent-color;
+      }
+    }
+    .title {
+      position: relative;
+      left: -30px;
+      text-decoration: none;
+    }
+    .navbar-brand {
+      img {
+        margin-top: -8px;
+      }
+    }
   }
   
   .push {

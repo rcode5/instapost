@@ -18,17 +18,17 @@ table {
     border:1px solid #eee;
     max-width: 90%;
     margin: auto auto 5% auto;
-    padding: 4% 5% 4%;
+    padding: 25px 35px;
     background-color: $light-background-color;
     .date {
       font-style: italic;
       position:relative;
-      top: -2rem;
+      top: -13px;
     }
   }
   .note {
     margin-top: 20px;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -42,7 +42,7 @@ table {
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) { 
   .posts .post {
-    max-width: 50%;
+    max-width: 600px;
   }
 }
 
