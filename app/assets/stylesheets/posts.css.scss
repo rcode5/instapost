@@ -15,11 +15,16 @@ table {
   }
   .post {
     border-radius: 2px;
-    border:1px solid #eee;
     max-width: 90%;
     margin: auto auto 5% auto;
-    padding: 25px 35px;
+    padding: 25px 30px;
     background-color: $light-background-color;
+    box-shadow: 0 0 5px 0px #eee;
+
+    img {
+      box-shadow: 0 0 5px 0px #ccc;
+    }
+    
     .date {
       font-style: italic;
       position:relative;
@@ -28,7 +33,7 @@ table {
   }
   .note {
     margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -43,6 +48,10 @@ table {
 @media (min-width: $screen-md-min) { 
   .posts .post {
     max-width: 600px;
+    padding: 25px 40px;
+    .note {
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -50,6 +59,7 @@ table {
 @media (min-width: $screen-lg-min) {
   .post {
     max-width: 40%;
+    padding: 25px 40px;
   }
 }
 
