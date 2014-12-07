@@ -4,6 +4,7 @@ html, body {
   font-family: 'Clear Sans', sans-serif;
   height: 100%;
   color: $text-color;
+  background-color: #fefefe;
 }
 .wrapper {
   min-height: 100%;
@@ -40,13 +41,7 @@ body.posts {
     }
     .title {
       position: relative;
-      left: -30px;
       text-decoration: none;
-    }
-    .navbar-brand {
-      img {
-        margin-top: -8px;
-      }
     }
   }
   
