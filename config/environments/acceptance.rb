@@ -10,4 +10,5 @@ Rails.application.configure do
       secret_key_id: ENV['AWS_SECRET_KEY_ID']
     }
   }
+  config.action_mailer.default_url_options = { host: 'insta-post-acceptance.herokuapp.com' }
 end
