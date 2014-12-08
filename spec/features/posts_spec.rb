@@ -29,10 +29,13 @@ feature "Static Pages" do
   scenario "/ should show more posts when i click on 'more'", js: true do
     posts
     visit root_path
-    click_on 'More'
-    expect(page).to have_css '.post', count: posts.length
-    expect(page).to have_link 'More', href: 'posts/more'
+    click_on '#load-more'
+    expect(page).to have_css '.post', count: PostsController::PICS_PER_PAGE * 2
+    expect(page).to have_link 'More'
     expect(page).to have_css '[data-page=1]'
+    click_on '#load-more'
+    expect(page).to have_css '.post', count: posts.length
+    expect(page).to_not have_link 'More'
   end
 
   scenario "/ should show html notes as html" do
