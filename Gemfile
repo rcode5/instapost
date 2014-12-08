@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 # Heroku uses the ruby version to configure your application's runtime.
 ruby '2.1.4'
@@ -16,10 +17,13 @@ gem 'awesome_print'
 
 gem 'casein', github: 'rcode5/casein'  # until casein ups authlogic requirement and improved file_filed management
 # included via casein
-#gem 'sass-rails'
-#gem 'bootstrap-sass'
+gem 'sass-rails'
+gem 'bootstrap-sass'
 
 gem 'paperclip'
+
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'bootstrap-wysihtml5-rails'
 
 group :production, :acceptance do
   gem 'rails_stdout_logging'
@@ -27,6 +31,7 @@ group :production, :acceptance do
 end
 
 group :test do
+  gem 'faker'
   gem 'fuubar'
   gem 'jasminerice', github: 'bradphelan/jasminerice'  # Latest release still depends on haml.
   gem 'capybara'
@@ -40,8 +45,8 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  #gem 'cane'
-  #gem 'morecane'
+  gem 'cane'
+  gem 'morecane'
 end
 
 group :development do
