@@ -13,10 +13,14 @@ table {
   h1,h2,h3,h4,h5,h5 {
     font-weight: 100;
   }
+  #load-more {
+    margin-bottom: 20px;
+    font-size: 4rem;
+  }
   .post {
     border-radius: 2px;
     max-width: 90%;
-    margin: auto auto 5% auto;
+    margin: auto auto 20px auto;
     padding: 25px 30px;
     background-color: $light-background-color;
     box-shadow: 0 0 5px 0px #eee;
