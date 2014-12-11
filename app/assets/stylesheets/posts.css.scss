@@ -22,11 +22,15 @@ table {
     height: 6rem;
     position: relative;
     i {
-      top: -10px;
+      top: -6px;
       position: relative;
     }
     &:hover {
-      color: rgba(200,200,200,0.4);
+      i {
+        &:before {
+          content: "\f063";
+        }
+      }
     }
   }
   .post {

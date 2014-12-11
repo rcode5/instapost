@@ -8,10 +8,12 @@ $ ->
       data:
         p: page
       success: (data) ->
-        $('.post-list .end-list').last().after(data);
+        $data = $(data)
+        $data.css("display", "none");
+        $('.post-list .end-list').last().before($data);
+        $data.slideDown();
         if (page < numPages)
           $moreButton.data('page', page + 1)
-          $moreButton.data('num-pages', page + 1)
         else
           $('#load-more').remove()
         

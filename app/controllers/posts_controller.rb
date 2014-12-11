@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  PICS_PER_PAGE = 3
+  PICS_PER_PAGE = 20
   def index
     @page = params[:p].to_i 
     offset = @page * PICS_PER_PAGE
