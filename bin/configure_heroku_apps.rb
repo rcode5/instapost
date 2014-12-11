@@ -35,6 +35,11 @@ class HerokuApp < HerokuClient
     end
   end
 
+  def update_collaborators
+    self.collaborator.create @app_name, 'jon@bunnymatic.com'
+    self.collaborator.create @app_name, 'jon@rcode5.com'
+  end
+
   def update_config
     self.config_var.update @app_name, @config["aws"]
   end
@@ -59,6 +64,7 @@ domains.each do |domain|
   prefix = domain.gsub(/\.rocks/, '')
   app = HerokuApp.new "instapost-for-#{prefix}"
   app.create
+  app.update_collaborators
   app.update_config
   
 end

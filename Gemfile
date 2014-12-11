@@ -25,7 +25,7 @@ gem 'paperclip'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-wysihtml5-rails'
 
-group :production, :acceptance do
+group :production, :acceptance, :assets do
   gem 'rails_stdout_logging'
   gem 'heroku_rails_deflate'
 end
