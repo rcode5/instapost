@@ -56,6 +56,11 @@ GEM
       request_store (~> 1.0)
       scrypt (~> 1.2)
     awesome_print (1.2.0)
+    aws-sdk (1.59.1)
+      aws-sdk-v1 (= 1.59.1)
+    aws-sdk-v1 (1.59.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -319,6 +324,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk
   better_errors
   binding_of_caller
   bootstrap-sass

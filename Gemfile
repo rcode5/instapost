@@ -21,6 +21,7 @@ gem 'sass-rails'
 gem 'bootstrap-sass'
 
 gem 'paperclip'
+gem 'aws-sdk'
 
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap-wysihtml5-rails'
