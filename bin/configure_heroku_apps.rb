@@ -27,7 +27,7 @@ class HerokuClient
   def initialize
     @client = PlatformAPI.connect_oauth(OAUTH_TOKEN)
   end
-  
+
   def method_missing(method, *args)
     if (@client.respond_to? method)
       @client.send(method, *args)
@@ -53,30 +53,48 @@ class AppConfigurator
     create
     update_bucket
     update_config
+    heroku_run "sharing:add jon\@bunnymatic.com"
+  end
+
+  def heroku_run(cmd)
+    system "heroku #{cmd} --app=#{name}"
+  end
+
+  def deploy
+    push
+    migrate
+  end
+
+  def push
+    system "git push git@heroku.com:instapost-for-jennmeyer.git master"
+  end
+
+  def migrate
+    heroku_run "run rake db:migrate"
   end
 
   def create
     if !exists?
-      @heroku.app.create(name: @app_name)
+      @heroku.app.create(name: name)
     end
   end
 
   def update_bucket
-    @aws.create_bucket @app_name
+    @aws.create_bucket name
   end
 
   def update_collaborators
-    @heroku.collaborator.create @app_name, 'jon@bunnymatic.com'
-    @heroku.collaborator.create @app_name, 'jon@rcode5.com'
+    @heroku.collaborator.create name, email: 'jon@bunnymatic.com'
+    @heroku.collaborator.create name, email: 'jon@rcode5.com'
   end
 
   def update_config
-    @heroku.config_var.update @app_name, @config
+    @heroku.config_var.update name, @config
   end
                          
   def info
     begin
-      @heroku.app.info(@app_name)
+      @heroku.app.info(name)
     rescue Excon::Errors::NotFound
       # heroku app doesn't exist yet
     end
@@ -89,12 +107,21 @@ class AppConfigurator
 end
 
 
+if (ARGV.any?)
+  desired = ARGV.map{|d| "#{d}.rocks"}
+  domains.select!{|d| desired.include? d}
+end
+
 domains.each do |domain|
 
   prefix = domain.gsub(/\.rocks/, '')
   app = AppConfigurator.new("instapost-for-#{prefix}")
   print "Configuring #{app.name}..."
   app.configure
+  puts "done"
+
+  print "Deploying #{app.name}..."
+  app.deploy
   puts "done"
  
 end
