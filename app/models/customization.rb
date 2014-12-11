@@ -1,11 +1,11 @@
 class Customization < ActiveRecord::Base
 
   COLORS = { 
-    pink:'rgba(255,200,200, 0.3)',
-    lavender: 'rgba(240, 200, 240, 0.3)',
-    green: 'rgba(200,255,200, 0.3)',
-    blue: 'rgba(200,200,255, 0.3)',
-    yellow: 'rgba(255,255,200, 0.3)',
+    pink: Color.new([255, 200, 200, 0.3]),
+    lavender:'rgba(240, 200, 240, 0.3)',
+    green: 'rgba(200, 255, 200, 0.3)',
+    blue: 'rgba(200, 200, 255, 0.3)',
+    yellow: 'rgba(255, 255, 200, 0.5)',
     orange: 'rgba(255, 200, 150, 0.3)'
   }
   
