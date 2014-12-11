@@ -1,5 +1,12 @@
 /* CASEIN CUSTOM */
 /* Use this file for your project-specific Casein CSS */
+/*= require bootstrap-wysihtml5 */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
+@import 'clear-sans-font';
+
 #content {
   margin-top: 20px;
 }

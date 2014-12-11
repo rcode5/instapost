@@ -13,7 +13,14 @@
 	<% posts.each do |post| %>
 		<tr>
 			<td class="image thumb">
+        <%- if post.image? %>
         <%= link_to image_tag(post.image.url(:thumb)), casein_post_path(post) %>
+        <%- else %>
+        <%= link_to casein_post_path(post) do %>
+          <i class="glyphicon glyphicon-ban-circle"></i>
+          No Image
+        <%-   end %>
+        <%- end %>
       </td>
 			<td><%= casein_table_cell_link post.note, casein_post_path(post) %></td>
 			<td class="delete">

@@ -9,7 +9,7 @@ module Casein
   
     def index
       @casein_page_title = 'Posts'
- 		  @posts = Post.order(sort_order(:updated_at)).paginate :page => params[:page]
+ 		  @posts = Post.order(updated_at: :desc).paginate :page => params[:page]
     end
   
     def show

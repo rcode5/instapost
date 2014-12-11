@@ -3,6 +3,8 @@
 html, body {
   font-family: 'Clear Sans', sans-serif;
   height: 100%;
+  color: $text-color;
+  background-color: #fefefe;
 }
 .wrapper {
   min-height: 100%;
@@ -19,7 +21,7 @@ body.posts {
     height: $header-height;
     line-height:  $header-height;
     font-size: small;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid #eee;
     background-color: $light-background-color;
   }
   
@@ -30,6 +32,17 @@ body.posts {
     text-transform: uppercase;
     letter-spacing: -1;
     font-weight: 100;
+    a {
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+        color: $text-accent-color;
+      }
+    }
+    .title {
+      position: relative;
+      text-decoration: none;
+    }
   }
   
   .push {
@@ -37,5 +50,11 @@ body.posts {
   }
   footer {
     padding: 0 5%;
+  }
+}
+
+.custom_styles.show {
+  .row.main {
+    margin-top: 40px;
   }
 }

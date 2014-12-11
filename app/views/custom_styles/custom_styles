@@ -1,0 +1,7 @@
+  /projects/instapost/app/views/custom_styles:
+  total used in directory 24 available 117907645
+  drwxr-xr-x  5 jon  staff  170 Dec  6 12:02 .
+  drwxr-xr-x  6 jon  staff  204 Dec  6 11:40 ..
+  -rw-r--r--  1 jon  staff  294 Dec  6 11:57 show.css.erb
+  -rw-r--r--  1 jon  staff  289 Dec  6 12:02 show.html.slim
+  -rw-r--r--  1 jon  staff  123 Dec  6 12:01 show.html.haml~

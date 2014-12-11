@@ -1,0 +1,12 @@
+.row.main
+  .col-xs-6
+    h2 Colors
+    - Customization::COLORS.each do |k, color|
+      .color-sample style="background-color: #{color}" = k
+
+  .col-xs-6
+    h2 Fonts
+    - Customization::FONTS.each do |k, font|
+      .font-sample style="font-family: #{font}" = "The quick brown fox jumped over the moon in #{k.to_s.humanize}"
+      
+    

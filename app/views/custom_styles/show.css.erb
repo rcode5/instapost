@@ -1,7 +1,14 @@
-body { font-family: <%= @custom.font.humanize %>; }
+body { font-family: <%= @custom.font_value.html_safe %>; }
 
 body.posts .navbar-header, body.posts footer,
-.posts .post { background-color: <%= @custom.color_value %>; }
-.navbar-header {
-  border-bottom: 1px solid #ddd;
+.posts .post { background-color: <%= @custom.color_value.html_safe %>; }
+body.posts .navbar-header {
+  border-bottom: 1px solid #eee;
+}
+body.posts footer {
+  border-top: 1px solid #eee;
+}
+body.posts #load-more {
+  background: <%= @custom.color_value.html_safe %>;
+  color: white;
 }

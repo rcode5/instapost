@@ -1,7 +1,8 @@
-.col-xs-12
+.col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
   .post
     .date = post.created_at.strftime("%B %d, %Y")
-    .img
-      img src=post.image.url(:main) class="img-responsive"
+    - if post.image?       
+      .img
+        img src=post.image.url(:main) class="img-responsive"
     .note
-      = post.note
+      = post.note.html_safe

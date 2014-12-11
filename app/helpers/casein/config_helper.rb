@@ -1,23 +1,20 @@
+# coding: utf-8
 module Casein
   module ConfigHelper
     
     # Name of website or client — used throughout Casein.
     def casein_config_website_name
-      'Casein'
+      'Instapost'
     end
 
     # Filename of logo image. Ideally, it should be a transparent PNG around 140x30px
     def casein_config_logo
-      'casein/casein.png'
+      image_path('admin_logo.png')
     end
 
     # The server hostname where Casein will run
     def casein_config_hostname
-      if Rails.env.production?
-        'http://www.caseincms.com'
-      else
-        'http://0.0.0.0:3000'
-      end
+      root_path
     end
 
     # The sender address used for email notifications
