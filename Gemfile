@@ -65,4 +65,5 @@ group :development do
   gem 'guard-livereload'
   gem 'rb-fsevent'
   gem 'growl'
+  gem 'platform-api' # heroku
 end
