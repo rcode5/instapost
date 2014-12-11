@@ -13,16 +13,42 @@ table {
   h1,h2,h3,h4,h5,h5 {
     font-weight: 100;
   }
+  #load-more {
+    margin-bottom: 20px;
+    font-size: 6rem;
+    display:block;
+    margin-bottom: 20px;
+    line-height:6rem;
+    height: 6rem;
+    position: relative;
+    i {
+      top: -6px;
+      position: relative;
+    }
+    &:hover {
+      i {
+        &:before {
+          content: "\f063";
+        }
+      }
+    }
+  }
   .post {
     border-radius: 2px;
-    max-width: 90%;
-    margin: auto auto 5% auto;
+    margin: auto auto 20px auto;
+    text-align: center;
     padding: 25px 30px;
     background-color: $light-background-color;
     box-shadow: 0 0 5px 0px #eee;
 
-    img {
-      box-shadow: 0 0 5px 0px #ccc;
+    .img {
+      background-color: transparent;
+      margin: auto;
+      img {
+        margin: auto;
+        box-shadow: 0 0 5px 0px #ccc;
+        background-color: transparent;
+      }
     }
     
     .date {
@@ -40,14 +66,12 @@ table {
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-sm-min) { 
   .posts .post {
-    max-width: 70%;
   }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) { 
   .posts .post {
-    max-width: 600px;
     padding: 25px 40px;
     .note {
       font-size: 1.6rem;
@@ -58,7 +82,6 @@ table {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) {
   .post {
-    max-width: 40%;
     padding: 25px 40px;
   }
 }

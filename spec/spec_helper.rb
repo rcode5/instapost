@@ -1,3 +1,4 @@
+require 'pry'
 # Coverage must be enabled before the application is loaded.
 if ENV['COVERAGE']
   require 'simplecov'

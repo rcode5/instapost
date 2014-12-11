@@ -1,1 +1,35 @@
-HEYx EAT
+.jumbotron
+  img src=image_path('admin_logo.png')
+  .row
+    .col-xs-6
+      p 
+        h3 Add a picture
+        ol
+          li 
+            | Click on 
+            = link_to "Posts", casein_posts_path
+          li
+            | Click on "Add a new post"
+          li Upload a picture
+          li Add a note
+          li 
+            | Click on 
+            = link_to 'Visit Site', root_path
+            | to see your new post
+    .col-xs-6
+      p 
+        h3 Change the color and font
+        ol
+          li 
+            | Click on 
+            = link_to "Customizations", casein_customizations_path
+          li 
+            | Click on "Add a new customization"
+          li Update the font or color.
+          li 
+            | Click on 
+            = link_to 'Visit Site', root_path
+            | to see your colors and fonts on the site.
+
+
+
