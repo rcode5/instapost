@@ -25,7 +25,7 @@ end
 class HerokuApp < HerokuClient
   def initialize(app_name) 
     @app_name = app_name
-    @config = YAML.load_file("secret/heroku_config.yml")
+    @config = YAML.load_file("secret/heroku_config.yml").merge({INSTAPOST_BUCKET: @app_name})
     super()
   end
   
@@ -41,7 +41,7 @@ class HerokuApp < HerokuClient
   end
 
   def update_config
-    self.config_var.update @app_name, @config["aws"]
+    self.config_var.update @app_name, @config
   end
                          
   def info
@@ -64,7 +64,7 @@ domains.each do |domain|
   prefix = domain.gsub(/\.rocks/, '')
   app = HerokuApp.new "instapost-for-#{prefix}"
   app.create
-  app.update_collaborators
+  #app.update_collaborators
   app.update_config
   
 end

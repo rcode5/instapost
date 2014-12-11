@@ -156,9 +156,7 @@ GEM
       moneta
       multi_json (>= 1.9.2)
       netrc
-    heroku_rails_deflate (1.0.3)
-      actionpack (>= 3.2.13)
-      activesupport (>= 3.2.13)
+    heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     hike (1.2.3)
     hitimes (1.2.2)
@@ -340,7 +338,7 @@ DEPENDENCIES
   guard-jasmine
   guard-livereload
   guard-rspec
-  heroku_rails_deflate
+  heroku-deflater
   jasminerice!
   jquery-rails
   launchy

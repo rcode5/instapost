@@ -80,7 +80,7 @@ Rails.application.configure do
     storage: :s3,
     #s3_host_name: ENV['AWS_HOST_NAME'] 
     s3_credentials: {
-      bucket: 'instapost',
+      bucket: ENV['INSTAPOST_BUCKET'],
       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
       secret_key_id: ENV['AWS_SECRET_KEY_ID']
     }
