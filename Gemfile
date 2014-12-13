@@ -15,8 +15,8 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'awesome_print'
 
-gem 'casein', github: 'rcode5/casein'  # until casein ups authlogic requirement and improved file_filed management
-# included via casein
+gem 'casein', github: 'rcode5/casein'
+
 gem 'sass-rails'
 gem 'bootstrap-sass'
 

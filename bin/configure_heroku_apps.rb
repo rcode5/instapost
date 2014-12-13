@@ -8,6 +8,8 @@ require 'yaml'
 OAUTH_TOKEN = ENV['HEROKU_PLATFORM_API_TOKEN']
 AWS_ACCESS_KEY_ID = ENV["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY']
+ADMIN_EMAIL = ENV['INSTAPOST_ADMIN_EMAIL']
+ADMIN_PASSWORD = ENV['INSTAPOST_ADMIN_PASSWORD']
 
 domains = %w|callie.rocks ellap.rocks fulton.rocks harperc.rocks jennmeyer.rocks oliverh.rocks ryanc.rocks ryley.rocks waltv.rocks|
 
@@ -38,11 +40,13 @@ class HerokuClient
 end
 
 class AppConfigurator
-  def initialize(app_name) 
+  def initialize(app_name)
     @app_name = app_name
     @config = YAML.load_file("secret/heroku_config.yml").merge({INSTAPOST_BUCKET: @app_name})
     @heroku = HerokuClient.new
     @aws = AWSClient.new
+    @admin_email = ADMIN_EMAIL
+    @admin_password = ADMIN_PASSWORD
   end
 
   def name
@@ -58,6 +62,14 @@ class AppConfigurator
 
   def heroku_run(cmd)
     system "heroku #{cmd} --app=#{name}"
+  end
+
+  def setup_admin_user
+    if ADMIN_EMAIL.nil? && ADMIN_PASSWORD.nil?
+      raise "You must set INSTAPOST_ADMIN_EMAIL and INSTAPOST_ADMIN_PASSWORD in your environment before running this task."
+    else
+      heroku_run "run rake casein:users:create_admin_user email=#{ADMIN_EMAIL} password=#{ADMIN_PASSWORD}"
+    end
   end
 
   def deploy
@@ -123,5 +135,8 @@ domains.each do |domain|
   print "Deploying #{app.name}..."
   app.deploy
   puts "done"
- 
+
+  print "Setting up admin users..."
+  app.setup_admin_user
+  puts "done"
 end

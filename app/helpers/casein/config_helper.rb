@@ -1,7 +1,7 @@
 # coding: utf-8
 module Casein
   module ConfigHelper
-    
+
     # Name of website or client — used throughout Casein.
     def casein_config_website_name
       'Instapost'
@@ -14,7 +14,7 @@ module Casein
 
     # The server hostname where Casein will run
     def casein_config_hostname
-      root_path
+      Rails.application.config.action_mailer.default_url_options[:host]
     end
 
     # The sender address used for email notifications
