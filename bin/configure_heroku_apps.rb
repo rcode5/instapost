@@ -59,7 +59,7 @@ class AppConfigurator
     update_bucket
     update_config
     heroku_run "sharing:add jon\@bunnymatic.com"
-    heroku_run "addons:add postmark"
+    heroku_run "domains:add www.#{domain}"
   end
 
   def heroku_run(cmd)

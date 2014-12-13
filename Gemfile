@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'awesome_print'
 
 gem 'casein', github: 'rcode5/casein'
+gem 'postmark-rails'
 
 gem 'sass-rails'
 gem 'bootstrap-sass'
