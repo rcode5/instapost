@@ -14,12 +14,12 @@ module Casein
 
     # The server hostname where Casein will run
     def casein_config_hostname
-      Rails.application.config.action_mailer.default_url_options[:host]
+      ENV['MAILER_HOST']
     end
 
     # The sender address used for email notifications
     def casein_config_email_from_address
-      'donotreply@caseincms.com'
+      "donotreply@#{Rails.application.config.hostname}"
     end
   
     # The initial page the user is shown after they sign in or click the logo. Probably this should be set to the first tab.
