@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/rcode5/casein.git
-  revision: 54e86de774d8b431589696c4d136e58e31ea163d
+  revision: d4d6097807db71742c350d92a0f829e4142b1970
   specs:
     casein (5.0.1.0)
       authlogic (= 3.4.3)
@@ -184,7 +184,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
-    minitest (5.4.3)
+    minitest (5.5.0)
     moneta (0.8.0)
     morecane (0.1.0)
       cane (>= 2.1.0)
@@ -264,12 +264,13 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     ruby-progressbar (1.7.0)
-    sass (3.2.19)
-    sass-rails (4.0.5)
+    sass (3.4.9)
+    sass-rails (5.0.0)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.2)
-      sprockets (~> 2.8, < 3.0)
-      sprockets-rails (~> 2.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (~> 1.1)
     scrypt (1.2.1)
       ffi-compiler (>= 0.0.2)
       rake
