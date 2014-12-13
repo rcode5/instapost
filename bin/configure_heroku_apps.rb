@@ -40,9 +40,10 @@ class HerokuClient
 end
 
 class AppConfigurator
-  def initialize(app_name)
-    @app_name = app_name
-    @config = YAML.load_file("secret/heroku_config.yml").merge({INSTAPOST_BUCKET: @app_name})
+  def initialize(domain)
+    @domain = domain
+    @app_name = domain.gsub(/\.rocks/, '')
+    @config = YAML.load_file("secret/heroku_config.yml").merge({INSTAPOST_BUCKET: @app_name, MAILER_HOST: @domain})
     @heroku = HerokuClient.new
     @aws = AWSClient.new
     @admin_email = ADMIN_EMAIL
@@ -58,6 +59,7 @@ class AppConfigurator
     update_bucket
     update_config
     heroku_run "sharing:add jon\@bunnymatic.com"
+    heroku_run "addons:add postmark"
   end
 
   def heroku_run(cmd)
@@ -68,7 +70,7 @@ class AppConfigurator
     if ADMIN_EMAIL.nil? && ADMIN_PASSWORD.nil?
       raise "You must set INSTAPOST_ADMIN_EMAIL and INSTAPOST_ADMIN_PASSWORD in your environment before running this task."
     else
-      heroku_run "run rake casein:users:create_admin_user email=#{ADMIN_EMAIL} password=#{ADMIN_PASSWORD}"
+      heroku_run "run rake casein:users:create_admin email=#{ADMIN_EMAIL} password=#{ADMIN_PASSWORD}"
     end
   end
 
@@ -78,7 +80,7 @@ class AppConfigurator
   end
 
   def push
-    system "git push git@heroku.com:instapost-for-jennmeyer.git master"
+    system "git push git@heroku.com:#{name}.git master"
   end
 
   def migrate
@@ -126,8 +128,7 @@ end
 
 domains.each do |domain|
 
-  prefix = domain.gsub(/\.rocks/, '')
-  app = AppConfigurator.new("instapost-for-#{prefix}")
+  app = AppConfigurator.new(domain)
   print "Configuring #{app.name}..."
   app.configure
   puts "done"
