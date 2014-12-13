@@ -14,7 +14,7 @@ module Casein
 
     # The server hostname where Casein will run
     def casein_config_hostname
-      ENV['MAILER_HOST']
+      'http://' + Rails.application.config.hostname
     end
 
     # The sender address used for email notifications
