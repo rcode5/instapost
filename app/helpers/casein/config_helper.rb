@@ -19,7 +19,7 @@ module Casein
 
     # The sender address used for email notifications
     def casein_config_email_from_address
-      "donotreply@#{Rails.application.config.hostname}"
+      "instapost@rcode5.com"
     end
   
     # The initial page the user is shown after they sign in or click the logo. Probably this should be set to the first tab.
