@@ -54,6 +54,7 @@ end
 group :development do
   gem 'pry'
   gem 'pry-byebug'
+  gem 'net-ping'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'foreman'

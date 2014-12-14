@@ -1,4 +1,7 @@
 require 'yaml'
+require 'net/ping/http'
+
+class PingError < StandardError; end
 module Instapost
   class AppConfigurator
 
@@ -19,6 +22,10 @@ module Instapost
       @domain
     end
 
+    def www_domain
+      'www.' + domain
+    end
+
     def name
       @app_name
     end
@@ -27,12 +34,29 @@ module Instapost
       @heroku.run_command cmd, name
     end
 
+    def ping
+      begin
+        tries ||= 3
+        ping!
+        true
+      rescue PingError => ex
+        print "retrying in 1 second..."
+        sleep(1)
+        retry unless ((tries -=1) == 0)
+        false
+      end
+    end
+
+    def ping!
+      raise PingError.new("Fail") unless Net::Ping::HTTP.new(www_domain).ping
+    end
+
     def configure
       create
       update_bucket
       update_config
       heroku_run "sharing:add jon\@bunnymatic.com"
-      heroku_run "domains:add www.#{domain}"
+      heroku_run "domains:add #{www_domain}"
     end
 
     def setup_admin_user
