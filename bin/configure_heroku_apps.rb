@@ -42,12 +42,16 @@ end
 class AppConfigurator
   def initialize(domain)
     @domain = domain
-    @app_name = "instapost-for-#{domain.gsub(/\.rocks/, '')}"
+    @app_name = "instapost-for-#{@domain.gsub(/\.rocks/, '')}"
     @config = YAML.load_file("secret/heroku_config.yml").merge({INSTAPOST_BUCKET: @app_name, MAILER_HOST: @domain})
     @heroku = HerokuClient.new
     @aws = AWSClient.new
     @admin_email = ADMIN_EMAIL
     @admin_password = ADMIN_PASSWORD
+  end
+
+  def domain
+    @domain
   end
 
   def name
