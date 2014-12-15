@@ -7,7 +7,11 @@ module Instapost
       @client = PlatformAPI.connect_oauth(OAUTH_TOKEN)
     end
 
-    def run_command(cmd, app_name)
+    def rake(cmd, app_name)
+      run "run rake #{cmd}", app_name
+    end
+
+    def run(cmd, app_name)
       system "heroku #{cmd} --app=#{app_name}"
     end
 

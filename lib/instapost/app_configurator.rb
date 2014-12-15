@@ -30,8 +30,12 @@ module Instapost
       @app_name
     end
 
+    def heroku_rake(cmd)
+      @heroku.rake cmd, name
+    end
+
     def heroku_run(cmd)
-      @heroku.run_command cmd, name
+      @heroku.run cmd, name
     end
 
     def ping
@@ -59,11 +63,15 @@ module Instapost
       heroku_run "domains:add #{www_domain}"
     end
 
+    def setup_user(user_params)
+      heroku_rake "users:add " + (user_params.map{|k,v| "#{k}=\"#{v}\""}.join " ")
+    end
+    
     def setup_admin_user
       if ADMIN_EMAIL.nil? && ADMIN_PASSWORD.nil?
         raise "You must set INSTAPOST_ADMIN_EMAIL and INSTAPOST_ADMIN_PASSWORD in your environment before running this task."
       else
-        heroku_run "run rake casein:users:create_admin email=#{ADMIN_EMAIL} password=#{ADMIN_PASSWORD}"
+        heroku_rake "casein:users:create_admin email=#{ADMIN_EMAIL} password=#{ADMIN_PASSWORD}"
       end
     end
 
