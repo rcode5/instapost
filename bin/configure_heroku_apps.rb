@@ -21,7 +21,11 @@ domains.each do |domain|
   app.deploy
   puts "done"
 
-  print "Setting up admin users..."
+  print "Setting up admin user..."
   app.setup_admin_user
+  puts "done"
+
+  print "Setting up other users..."
+  app.setup_user email: "jon@bunnymatic.com", password: 'bmatic', name: 'Mr Rogers', login: 'bmatic'
   puts "done"
 end
