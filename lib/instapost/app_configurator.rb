@@ -69,7 +69,7 @@ module Instapost
     
     def setup_admin_user
       if ADMIN_EMAIL.nil? && ADMIN_PASSWORD.nil?
-        raise "You must set INSTAPOST_ADMIN_EMAIL and INSTAPOST_ADMIN_PASSWORD in your environment before running this task."
+        puts "You must set INSTAPOST_ADMIN_EMAIL and INSTAPOST_ADMIN_PASSWORD in your environment before running this task."
       else
         heroku_rake "casein:users:create_admin email=#{ADMIN_EMAIL} password=#{ADMIN_PASSWORD}"
       end
