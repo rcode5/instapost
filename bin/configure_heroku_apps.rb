@@ -24,6 +24,6 @@ domains.each do |domain|
   puts "done"
 
   print "Setting up other users..."
-  app.setup_user email: "jon@bunnymatic.com", password: 'bmatic', name: 'Mr Rogers', login: 'bmatic'
+  app.setup_basic_user 
   puts "done"
 end

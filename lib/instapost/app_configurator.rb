@@ -10,8 +10,10 @@ module Instapost
 
     def initialize(domain)
       @domain = domain
-      @app_name = "instapost-for-#{@domain.gsub(/\.rocks/, '')}"
+      @username = domain.gsub(/\.rocks/, '')
+      @app_name = "instapost-for-#{@username}"
       @config = YAML.load_file("secret/heroku_config.yml").merge({INSTAPOST_BUCKET: @app_name, MAILER_HOST: @domain})
+      @user_config = YAML.load("secret/basic_user_config.yaml")
       @heroku = HerokuClient.new
       @aws = AWSClient.new
       @admin_email = ADMIN_EMAIL
@@ -63,7 +65,8 @@ module Instapost
       heroku_run "domains:add #{www_domain}"
     end
 
-    def setup_user(user_params)
+    def setup_user
+      user_params = @user_config.merge({name: app_name, login: app_name})
       heroku_rake "users:add " + (user_params.map{|k,v| "#{k}=\"#{v}\""}.join " ")
     end
     
