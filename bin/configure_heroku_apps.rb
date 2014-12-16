@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-require 'pry'
-
 require_relative '../lib/instapost'
 
 domains = %w|callie.rocks ellap.rocks fulton.rocks harperc.rocks jennmeyer.rocks oliverh.rocks ryanc.rocks ryley.rocks waltv.rocks|

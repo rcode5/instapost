@@ -10,11 +10,10 @@ namespace :users do
     if params.all?
       user_params = Hash[[:name, :login, :password, :email].zip(params)]
       user_params[:password_confirmation] = user_params[:password]
-      binding.pry
       Casein::AdminUser.create! user_params
     else
       puts "You must specify name, login, password and email (like email=joe@example.com)"
-      exit(-1)
+      exit -1
     end
   end
 end
