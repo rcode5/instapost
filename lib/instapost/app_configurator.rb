@@ -65,7 +65,7 @@ module Instapost
       heroku_run "domains:add #{www_domain}"
     end
 
-    def setup_user
+    def setup_basic_user
       user_params = @user_config.merge({name: app_name, login: app_name})
       heroku_rake "users:add " + (user_params.map{|k,v| "#{k}=\"#{v}\""}.join " ")
     end
