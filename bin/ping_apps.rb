@@ -17,6 +17,5 @@ domains.each do |domain|
     puts "success" 
   else
     puts "failure"
-    exit(-1)
   end
 end
