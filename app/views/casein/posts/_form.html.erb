@@ -4,7 +4,7 @@
 		<%= casein_text_area f, f.object, :note %>
 	</div>
 	<div class="col-xs-10">
-		<%= casein_file_field f, f.object, :image %>
+		<%= casein_file_field f, f.object, f.object.class.name.tableize.singularize, :image %>
   </div>
   <div class="col-xs-2">
     <%- if f.object.image? %>

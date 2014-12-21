@@ -1,4 +1,5 @@
-$ ->
+ready = ->
+  debugger
   $('#load-more').on 'click', () ->
     $moreButton = $(@)
     page = parseInt($moreButton.data('page'),10)
@@ -17,5 +18,6 @@ $ ->
         else
           $('#load-more').remove()
         
-
         
+$(document).ready ready
+$(document).on 'page:load', ready

@@ -17,37 +17,37 @@ ActiveRecord::Schema.define(version: 20141205042125) do
   enable_extension "plpgsql"
 
   create_table "casein_admin_users", force: true do |t|
-    t.string   "login",                           null: false
-    t.string   "name"
-    t.string   "email"
-    t.integer  "access_level",        default: 0, null: false
-    t.string   "crypted_password",                null: false
-    t.string   "password_salt",                   null: false
-    t.string   "persistence_token"
-    t.string   "single_access_token"
-    t.string   "perishable_token"
-    t.integer  "login_count",         default: 0, null: false
-    t.integer  "failed_login_count",  default: 0, null: false
+    t.string   "login",               limit: 255,             null: false
+    t.string   "name",                limit: 255
+    t.string   "email",               limit: 255
+    t.integer  "access_level",                    default: 0, null: false
+    t.string   "crypted_password",    limit: 255,             null: false
+    t.string   "password_salt",       limit: 255,             null: false
+    t.string   "persistence_token",   limit: 255
+    t.string   "single_access_token", limit: 255
+    t.string   "perishable_token",    limit: 255
+    t.integer  "login_count",                     default: 0, null: false
+    t.integer  "failed_login_count",              default: 0, null: false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
-    t.string   "current_login_ip"
-    t.string   "last_login_ip"
-    t.string   "time_zone"
+    t.string   "current_login_ip",    limit: 255
+    t.string   "last_login_ip",       limit: 255
+    t.string   "time_zone",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "customizations", force: true do |t|
-    t.string   "color"
-    t.string   "font"
+    t.string   "color",      limit: 255
+    t.string   "font",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.text     "note"

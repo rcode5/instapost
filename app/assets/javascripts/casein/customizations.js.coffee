@@ -1,4 +1,4 @@
-$ ->
+ready = ->
   $sampler = $('#sampler p');
 
   if $sampler.length && availableColors
@@ -19,3 +19,6 @@ $ ->
 
     setSelectFont()
     $('form #customization_font').on 'change', setSelectFont
+
+$(document).ready ready
+$(document).on 'page:load', ready

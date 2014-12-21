@@ -1,4 +1,4 @@
-$ ->  
+ready = ->  
   $form = $('.edit_post, .new_post')
   if ($form.length)
 
@@ -12,6 +12,8 @@ $ ->
         '</div>' +
         "</li>"
 
+    console.log('yo',   $form.find("#post_note"))
+
     $form.find("#post_note").wysihtml5
       customTemplates: customButtons
       toolbar:
@@ -24,3 +26,5 @@ $ ->
         lists: false
         blockquote: false
   
+$(document).ready ready
+$(document).on 'page:load', ready
